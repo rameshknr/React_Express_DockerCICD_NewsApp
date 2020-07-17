@@ -13,7 +13,6 @@ The Objective of this application is to understand CI/CD and Docker
 - Push the code in git
 - Submit the code to your mentor
 
-
 ## Expected Outcome:
 By the end of the assignment you should be able to understand
 
