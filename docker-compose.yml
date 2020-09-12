@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  newsapi:
+    image: newsapi
+    ports: 
+      - "8008:8008"
+  newsapi_auth:
+    image: newsapi_auth
+    ports:
+      - "8010:8010"
+    depends_on:
+      - devdb
+  newsapidb:
+    image: newsapidb
+    ports:
+      - "8009:8009"
+    depends_on:
+      - devdb
+  newsui:
+    image: newsui
+    ports:
+      - "80:80"
+    depends_on:
+      - newsapidb
+  devdb: 
+    image: mongo
+    ports:
+      - "27017:27017"

@@ -1,0 +1,20 @@
+POST/  http://localhost:8010/api/auth/register
+
+{
+	"username":"admin1",
+	"fullname":"Ram",
+	"email":"ram@gmail.com",
+	"password":"data123"
+}
+
+POST/  http://localhost:8010/api/auth/login
+
+{
+	"username":"admin1",
+	"password":"data123"
+}
+
+GET/  http://localhost:8010/api/auth/isAuthenticated
+headers :{
+Authorization: Bearer {TOKEN}
+}
