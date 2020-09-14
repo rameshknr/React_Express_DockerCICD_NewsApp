@@ -1,13 +1,13 @@
 image: node
 stages:
-  - buildui
-  - testui
-buildui:
+  - build
+  - test
+build:
   script:
     - cd NewsApp_UI
     - npm install
     - npm run build
-testui:
+test:
   script:
     - cd NewsApp_UI
     - npm install
