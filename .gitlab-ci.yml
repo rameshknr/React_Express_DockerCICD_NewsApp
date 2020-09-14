@@ -5,15 +5,10 @@ stages:
 before_script:
   - cd NewsApp_UI
 build:
-  stage:
-    - build
   script:
-    - 'npm install'
-    - 'npm run build'
+    - npm install
+    - npm run build
 test:
-  image: newsui
-  stage:
-    - test
   script:
-    - 'npm install'
-    - 'npm run test'
+    - npm install
+    - npm run test
