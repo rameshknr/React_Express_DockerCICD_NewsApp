@@ -2,8 +2,8 @@ image: node
 stages:
   - build
   - test
- before_script:
-    - cd NewsApp_UI
+before_script:
+  - cd NewsApp_UI
 build:
   stage:
     - build
