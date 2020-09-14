@@ -1,18 +1,21 @@
 image: node
 stages:
-  - 'build'
-  - 'test'
+  - build
+  - test
 build:
-  image: newsui
   stage:
-    - 'build'
+    - build
+  include:
+    - local: /NewsApp_UI
   script:
     - 'npm install'
     - 'npm run build'
 test:
   image: newsui
   stage:
-    - 'test'
+    - test
+  include:
+    - local: /NewsApp_UI
   script:
     - 'npm install'
     - 'npm run test'
