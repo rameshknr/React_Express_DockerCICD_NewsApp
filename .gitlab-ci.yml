@@ -5,17 +5,15 @@ stages:
 build:
   stage:
     - build
+  include: '/NewsApp_UI/package.json'
   script:
-    - cd NewsApp_UI
     - 'npm install'
     - 'npm run build'
 test:
   image: newsui
   stage:
     - test
-  include:
-    - local: /NewsApp_UI
+  include: '/NewsApp_UI/package.json'
   script:
-    - cd NewsApp_UI
     - 'npm install'
     - 'npm run test'
