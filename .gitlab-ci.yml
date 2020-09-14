@@ -1,18 +1,18 @@
 image: node
 stages:
-  - build
-  - test
+  - 'build'
+  - 'test'
 build:
   image: newsui
   stage:
-    - build
+    - 'build'
   script:
     - 'npm install'
     - 'npm run build'
 test:
   image: newsui
   stage:
-    - test
+    - 'test'
   script:
     - 'npm install'
     - 'npm run test'
