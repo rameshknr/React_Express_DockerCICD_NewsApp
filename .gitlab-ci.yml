@@ -12,3 +12,6 @@ test:
     - cd NewsApp_UI
     - npm install
     - npm run test
+    - cd NewsApp_Source
+    - npm install
+    - npm run test
