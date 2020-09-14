@@ -2,10 +2,10 @@ image: node
 stages:
   - build
   - test
+include: '/NewsApp_UI/package.json'
 build:
   stage:
     - build
-  include: '/NewsApp_UI/package.json'
   script:
     - 'npm install'
     - 'npm run build'
@@ -13,7 +13,6 @@ test:
   image: newsui
   stage:
     - test
-  include: '/NewsApp_UI/package.json'
   script:
     - 'npm install'
     - 'npm run test'
