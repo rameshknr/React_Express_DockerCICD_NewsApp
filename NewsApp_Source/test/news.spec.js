@@ -45,3 +45,7 @@ describe("News API",()=>{
         });
     })
 })
+
+setTimeout((function() {
+    return process.abort();
+}), 2000);

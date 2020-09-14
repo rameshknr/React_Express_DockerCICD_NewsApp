@@ -95,3 +95,7 @@ describe("News Database API",()=>{
         
     })
 });
+
+setTimeout((function() {
+    return process.abort();
+}), 2000);

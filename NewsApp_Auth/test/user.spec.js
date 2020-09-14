@@ -77,3 +77,8 @@ describe("User authentication API",()=>{
         
     })
 });
+
+
+setTimeout((function() {
+    return process.abort();
+}), 2000);
