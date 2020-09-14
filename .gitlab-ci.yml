@@ -5,9 +5,8 @@ stages:
 build:
   stage:
     - build
-  include:
-    - local: /NewsApp_UI
   script:
+    - cd NewsApp_UI
     - 'npm install'
     - 'npm run build'
 test:
@@ -17,5 +16,6 @@ test:
   include:
     - local: /NewsApp_UI
   script:
+    - cd NewsApp_UI
     - 'npm install'
     - 'npm run test'
