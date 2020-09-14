@@ -1,17 +1,11 @@
 image: node
 stages:
-  - build
   - test
-build:
-  script:
-    - cd NewsApp_UI
-    - npm install
-    - npm run build
 test:
   script:
     - cd NewsApp_UI
     - npm install
     - npm run test
-    - cd NewsApp_Source
+    - cd ../NewsApp_Source
     - npm install
     - npm run test
