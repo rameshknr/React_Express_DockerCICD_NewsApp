@@ -2,7 +2,8 @@ image: node
 stages:
   - build
   - test
-include: 'docker-compose.yml'
+ before_script:
+    - cd NewsApp_UI
 build:
   stage:
     - build
