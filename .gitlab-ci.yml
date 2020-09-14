@@ -3,13 +3,14 @@ stages:
   - build
   - test
 build:
+  image: newsui
   stage:
     - build
-  CMD: ["cd", "NewsApp_UI/"]
   script:
     - 'npm install'
     - 'npm run build'
 test:
+  image: newsui
   stage:
     - test
   script:
