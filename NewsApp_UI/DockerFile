@@ -1,0 +1,8 @@
+FROM node as build-stage
+WORKDIR /newsui
+COPY . /newsui
+RUN npm install
+RUN npm run build
+
+FROM nginx
+COPY --from=build-stage /newsui/build /usr/share/nginx/html

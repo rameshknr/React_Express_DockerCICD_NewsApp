@@ -1,0 +1,20 @@
+docker build -f DockerFile -t newsapi .
+docker build -f DockerFile -t newsapi_auth .
+docker build -f DockerFile -t newsapidb .
+docker build -f DockerFile -t newsui .
+
+docker run -p 8008:8008 newsapi
+
+docker images
+
+docker ps -a
+
+docker container prune
+
+docker-compose up
+
+docker-compose down
+
+
+TO delete images
+docker rmi -f <<imageID>>

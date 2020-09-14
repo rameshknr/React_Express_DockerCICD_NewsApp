@@ -1,0 +1,5 @@
+FROM node
+WORKDIR /newsApiDB
+COPY . /newsApiDB
+RUN npm install
+CMD ["npm", "start"]

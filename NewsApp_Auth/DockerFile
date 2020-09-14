@@ -1,0 +1,5 @@
+FROM node
+WORKDIR /newsApi_auth
+COPY . /newsApi_auth
+RUN npm install
+CMD ["npm", "start"]
