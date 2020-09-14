@@ -15,7 +15,7 @@ const Dashboard = (props) =>{
             })
             .then(res => res.json())
             .then(data => {
-                data.articles.map(item => {
+                data.articles.forEach(item => {
                     item.source.id = v4();
                 }); 
                 return setnews(data.articles);
@@ -24,7 +24,7 @@ const Dashboard = (props) =>{
 
     const AddDetailData= (id) => {
         let readLater = {};
-        news.map(item =>{
+        news.forEach(item =>{
             if(item.source.id === id){
                 readLater =  item;
             }

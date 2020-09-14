@@ -2,9 +2,6 @@ import React from 'react';
 
 const Card = (props) => {
 
-    const AddReadLaterHandler= (id) =>{
-        props.addData(id);
-    }
     return (
         <div  className = "col-md-4">
             <div data-testid="card" className="card mb-3" style={{ width: '18rem' }}>

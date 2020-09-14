@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '../card/FilterCard';
 import {v4} from 'uuid';
 
@@ -11,16 +11,16 @@ const Filter = (props) => {
 
     const searchNews =() =>{
         let apiString = 'https://newsapi.org/v2/top-headlines?'
-        if(country!= ''){
+        if(country!== ''){
             apiString = apiString+`country=${country}&`;
         }
-        if(category!= ''){
+        if(category!== ''){
             apiString = apiString+`category=${category}&`;
         }
-        if(sources!= ''){
+        if(sources!== ''){
             apiString = apiString+`sources=${sources}&`;
         }
-        if(searchTextData!= ''){
+        if(searchTextData!== ''){
             apiString = apiString+`q=${searchTextData}&`;
         }
         apiString += `apikey=166d16dcc1a741b99692f315fa254960&page=1`;
@@ -28,7 +28,7 @@ const Filter = (props) => {
             fetch(apiString)
                 .then(res => res.json())
                 .then(data => {
-                    data.articles.map(item => {
+                    data.articles.forEach(item => {
                         item.source.id = v4();
                     }); 
                     setnews(data.articles);
@@ -38,12 +38,11 @@ const Filter = (props) => {
     }
     const AddDetailDataFilter= (filterId) => {
         let readLater = {};
-        news.map(item =>{
+        news.forEach(item => {
             if(item.source.id === filterId){
                 readLater =  item;
             }
         } );
-        alert(readLater.title);
         fetch('http://localhost:8009/api/v1/news', {
             method: 'POST',
             body: JSON.stringify({
